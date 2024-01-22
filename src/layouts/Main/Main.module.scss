@@ -1,0 +1,110 @@
+.site-main {
+    border-bottom: 1px solid #dddee0;
+    padding-top: 80px;
+
+    .container {
+        max-width: 1380px;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        .home-banner {
+            position: relative;
+            margin-bottom: 40px;
+            border-top-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+            background: #fff;
+
+            .slick-slider {
+                width: 100%;
+                margin: 0 auto;
+
+                .slick-prev,
+                .slick-next {
+                    font-size: 24px;
+                    color: #333;
+                    z-index: 1;
+                    background: transparent;
+
+                    &:before {
+                        font-size: 24px;
+                    }
+                }
+
+                .slick-prev {
+                    left: 10px;
+                }
+
+                .slick-next {
+                    right: 10px;
+                }
+
+                .slick-dots {
+                    bottom: 20px;
+                    list-style: none;
+                    padding: 0;
+                    text-align: center;
+
+                    li {
+                        display: inline-block;
+                        margin: 0 5px;
+
+                        button {
+                            font-size: 12px;
+                            color: #666;
+                            border: 1px solid #666;
+                            border-radius: 50%;
+                            background-color: transparent;
+                            width: 12px;
+                            height: 12px;
+                            outline: none;
+                            cursor: pointer;
+
+                            &:hover,
+                            &:focus {
+                                color: #000;
+                                background-color: #000;
+                            }
+                        }
+
+                        &.slick-active button {
+                            color: #000;
+                            background-color: #000;
+                        }
+                    }
+                }
+
+                .slick-image {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .home-new-prod {
+        margin: 0 auto 40px;
+        max-width: 1380px;
+
+        .title-section {
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 32px;
+            font-family: 'Montserrat';
+            color: #221f20;
+        }
+
+        .exclusive-tabs {
+            .exclusive-head {
+                .exclusive-content {
+                    margin-bottom: 24px;
+                    position: relative;
+                    min-height: 100px;
+                }
+            }
+        }
+    }
+}
