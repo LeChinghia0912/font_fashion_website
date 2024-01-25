@@ -102,7 +102,25 @@
                 .exclusive-content {
                     margin-bottom: 24px;
                     position: relative;
-                    min-height: 100px;
+                    margin-right: 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: #000;
+                    }
+
+                    .card-product {
+                        .img-style-product {
+                            max-width: 90%;
+                            margin-right: auto;
+                            margin-left: auto;
+                        }
+
+                        .title-product {
+                            text-align: center;
+                            margin-top: 20px;
+                        }
+                    }
                 }
             }
         }

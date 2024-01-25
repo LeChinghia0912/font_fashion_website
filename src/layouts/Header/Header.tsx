@@ -1,10 +1,16 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBagShopping, faHeadphones, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
+import {
+    faBagShopping,
+    faHeadphones,
+    faMagnifyingGlass,
+    faUser,
+    IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.scss';
 import { MenuAPI } from '../../api/menu/MenuAPI';
+import { Link } from 'react-router-dom';
 
 const st = classNames.bind(styles);
 
@@ -16,7 +22,7 @@ const Header = () => {
             try {
                 const data = await MenuAPI();
                 console.log('Fetched menu data:', data);
-                setMenuData(data);
+                setMenuData(data || []);
             } catch (error) {
                 console.error('Error fetching menu data:', error);
             }
@@ -25,13 +31,23 @@ const Header = () => {
         fetchMenuData();
     }, []);
 
-    const renderMenuItems = () => {
-        return menuData.map((item, index) => (
-            <li key={index}>
-                <a style={{ fontSize: 14 }}>{item}</a>
-            </li>
-        ));
-    };
+    const renderMenuItems = () => (
+        <>
+            {menuData.map((item, index) => (
+                <li key={index}>
+                    <Link to={`/${item.toLowerCase()}`}>{item}</Link>
+                </li>
+            ))}
+        </>
+    );
+
+    const renderActionItem = (icon: IconDefinition, to: string) => (
+        <div className={st('item-wallet')} key={to}>
+            <Link to={to}>
+                <FontAwesomeIcon icon={icon} />
+            </Link>
+        </div>
+    );
 
     return (
         <div className={st('site-header')}>
@@ -46,15 +62,9 @@ const Header = () => {
                         <input type="text" placeholder="Tìm kiếm sản phẩm" />
                     </form>
                     <div className={st('header-actions')}>
-                        <div className={st('item-wallet')}>
-                            <FontAwesomeIcon icon={faHeadphones} />
-                        </div>
-                        <div className={st('item-wallet')}>
-                            <FontAwesomeIcon icon={faUser} />
-                        </div>
-                        <div className={st('item-wallet')}>
-                            <FontAwesomeIcon icon={faBagShopping} />
-                        </div>
+                        {renderActionItem(faHeadphones, 'help')}
+                        {renderActionItem(faUser, 'info')}
+                        {renderActionItem(faBagShopping, 'cart')}
                     </div>
                 </div>
             </div>
