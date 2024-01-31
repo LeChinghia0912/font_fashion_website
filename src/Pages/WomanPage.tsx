@@ -1,15 +1,12 @@
 import React from 'react';
 import Header from '../layouts/Header/Header';
-import Product from '../components/sanpham/Product';
 
 export const WomanPage = () => {
     return (
         <div>
             <Header />
 
-            <div style={{ marginTop: 90 }}>
-                <Product />
-            </div>
+            <div style={{ marginTop: 90 }}>Trang sản phẩm</div>
         </div>
     );
 };

@@ -5,16 +5,16 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { SliderAPI } from '../../api/slider/SliderAPI';
-import ProductApiResponse from '../../api/product/ProductApiResponse';
 import { ProductAPI } from '../../api/product/ProductAPI';
 import { Link } from 'react-router-dom';
 import { sliderSettings, productSliderSettings } from './mainData';
+import { Product } from '../../api/product/ProductApiResponse';
 
 const st = classNames.bind(styles);
 
 const Main = () => {
     const [sliderData, setSliderData] = useState<string[]>([]);
-    const [productData, setProductData] = useState<ProductApiResponse['products']>();
+    const [productData, setProductData] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -58,20 +58,20 @@ const Main = () => {
                         <div className={st('exclusive-content')}>
                             {loading ? (
                                 <div style={{ textAlign: 'center' }}>Loading...</div>
-                            ) : productData ? (
+                            ) : productData.length > 0 ? (
                                 <Slider {...productSliderSettings}>
-                                    {productData.map((products, index) => (
-                                        <Link to={''} key={index}>
+                                    {productData.map((product, index) => (
+                                        <Link to={`/detail/${product._id}`} key={index}>
                                             <div className={st('card-product')}>
                                                 <img
-                                                    src={products.image}
-                                                    alt={`Slide ${index + 1}`}
+                                                    src={product.image}
+                                                    alt={`Product ${index + 1}`}
                                                     className={st('img-style-product')}
                                                 />
                                                 <div className={st('title-product')}>
-                                                    <p>{products.name}</p>
-                                                    <p>{products.productCategory}</p>
-                                                    <p>Giá: {products.price}.vnđ</p>
+                                                    <p>{product.name}</p>
+                                                    <p>{product.productCategory}</p>
+                                                    <p>Giá: {product.price}.vnđ</p>
                                                 </div>
                                             </div>
                                         </Link>

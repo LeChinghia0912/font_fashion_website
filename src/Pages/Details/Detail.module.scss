@@ -1,0 +1,73 @@
+.main {
+    margin-top: 90px;
+
+    .content {
+        padding: 20px 0;
+        background: #fff;
+
+        .section_group {
+            clear: both;
+            padding: 0px;
+            margin: 0px;
+
+            .content-desc {
+                display: block;
+                float: left;
+                clear: both;
+                margin-left: 0;
+                width: 67.1%;
+                padding: 1.5%;
+
+                .images {
+                    width: 44.2%;
+                    float: left;
+                    text-align: center;
+
+                    img {
+                        height: 450px;
+                        width: 300px;
+                    }
+                }
+
+                .desc {
+                    width: 53.2%;
+                    display: block;
+                    float: left;
+                    margin: 0% 0 0% 2.6%;
+
+                    h1 {
+                        font-family: 'Monda', sans-serif;
+                        font-size: 1.1em;
+                        font-weight: normal;
+                        margin-top: 0px;
+                        text-transform: uppercase;
+
+                        .add-cart {
+                            padding-top: 15px;
+                        }
+                    }
+                }
+
+                .product-desc {
+                    clear: both;
+                    padding-top: 20px;
+
+                    h2 {
+                        padding: 8px 20px;
+                        background: #6c6c6c;
+                        border: 1px solid #ebe8e8;
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        font-family: 'Monda', sans-serif;
+                        font-size: 1.2em;
+                        color: #fff;
+                        text-transform: uppercase;
+                        text-shadow: 0 1px 5px rgba(34, 34, 34, 0.17);
+                    }
+                }
+            }
+        }
+    }
+}

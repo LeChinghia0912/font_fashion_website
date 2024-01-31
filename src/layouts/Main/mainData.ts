@@ -5,7 +5,7 @@ export const sliderSettings: Settings = {
     arrows: true,
     lazyLoad: 'ondemand' as LazyLoadTypes | undefined,
     infinite: true,
-    speed: 2000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -18,7 +18,7 @@ export const productSliderSettings: Settings = {
     centerMode: true,
     infinite: true,
     slidesToShow: 5,
-    speed: 2000,
+    speed: 500,
     autoplay: true,
     autoplaySpeed: 3000,
 };

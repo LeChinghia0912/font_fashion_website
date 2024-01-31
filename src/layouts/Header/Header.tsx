@@ -21,7 +21,6 @@ const Header = () => {
         const fetchMenuData = async () => {
             try {
                 const data = await MenuAPI();
-                console.log('Fetched menu data:', data);
                 setMenuData(data || []);
             } catch (error) {
                 console.error('Error fetching menu data:', error);
@@ -53,7 +52,9 @@ const Header = () => {
         <div className={st('site-header')}>
             <div className={st('container')}>
                 <nav className={st('main-menu')}>{renderMenuItems()}</nav>
-                <div className={st('site-brand')}></div>
+                <Link to={'/'}>
+                    <div className={st('site-brand')}></div>
+                </Link>
                 <div className={st('right-header')}>
                     <form className={st('search-form')}>
                         <button className={st('submit')}>

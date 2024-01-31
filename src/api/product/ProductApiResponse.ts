@@ -1,13 +1,15 @@
-interface ProductApiResponse {
-    products: [{
-        name: string,
-        productCategory: string,
-        price: string,
-        image: string,
-    }
-    ]
+export interface Product {
+    _id: string;
+    name: string;
+    productCategory: string;
+    price: string;
+    introduce: string;
+    detail: string;
+    preserve: string;
+    image: string;
 }
 
-
-
-export default ProductApiResponse;
+export interface ProductApiResponse {
+    products: any;
+    details: Product | null;
+}
