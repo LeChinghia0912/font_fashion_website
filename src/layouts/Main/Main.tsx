@@ -9,6 +9,7 @@ import { ProductAPI } from '../../api/product/ProductAPI';
 import { Link } from 'react-router-dom';
 import { sliderSettings, productSliderSettings } from './mainData';
 import { Product } from '../../api/product/ProductApiResponse';
+import blog from '../../assets/images/blog.jpg';
 
 const st = classNames.bind(styles);
 
@@ -81,7 +82,17 @@ const Main = () => {
                                 <div>No product data available</div>
                             )}
                         </div>
+                        <div className={st('link-product')}>
+                            <Link to={''} className={st('all-product')}>
+                                Xem tất cả
+                            </Link>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div className={st('home-trending')}>
+                <div className={st('content-trending')}>
+                    <img src={blog} alt="" style={{ maxWidth: '100%' }} />
                 </div>
             </div>
         </div>
