@@ -83,7 +83,7 @@ const Main = () => {
                             )}
                         </div>
                         <div className={st('link-product')}>
-                            <Link to={''} className={st('all-product')}>
+                            <Link to={'/danh-muc'} className={st('all-product')}>
                                 Xem tất cả
                             </Link>
                         </div>

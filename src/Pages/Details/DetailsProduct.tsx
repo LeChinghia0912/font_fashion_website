@@ -54,6 +54,10 @@ const DetailsProduct: React.FC<DetailsProductProps> = () => {
         }
     };
 
+    const addToCart = () => {
+        console.log('đã thêm sản phẩm vào giỏ hàng');
+    };
+
     return (
         <div>
             <Header />
@@ -90,11 +94,10 @@ const DetailsProduct: React.FC<DetailsProductProps> = () => {
                                     </div>
                                 </div>
                                 <div className={st('add-cart')}>
-                                    <div className={st('btn-add-cart')}>
-                                        <Link to={''}>
-                                            <span>THÊM VÀO GIỎ HÀNG</span>
-                                        </Link>
-                                    </div>
+                                    <button onClick={addToCart}>
+                                        <span>THÊM VÀO GIỎ HÀNG</span>
+                                    </button>
+
                                     <div className={st('btn-like')}>
                                         <Link to={''}>
                                             <span>
@@ -113,11 +116,11 @@ const DetailsProduct: React.FC<DetailsProductProps> = () => {
                                     <h2>Chi tiết sản phẩm</h2>
                                     <p>{productDetails.detail}</p>
                                 </div>
-                            </div>
 
-                            <div className={st('product-desc')}>
-                                <h2>Bảo quản</h2>
-                                <p>{productDetails.preserve}</p>
+                                <div className={st('product-desc')}>
+                                    <h2>Bảo quản</h2>
+                                    <p>{productDetails.preserve}</p>
+                                </div>
                             </div>
                         </div>
                     </div>

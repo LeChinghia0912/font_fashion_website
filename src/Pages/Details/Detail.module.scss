@@ -103,7 +103,7 @@ a {
                         padding: 5px;
                         margin-top: 16px;
 
-                        .btn-add-cart {
+                        button {
                             background-color: #221f20;
                             border: 1px solid #221f20;
                             color: white;
@@ -114,13 +114,10 @@ a {
                             font-size: 16px;
                             border-radius: 5px;
 
-                            span {
-                                color: #fff;
-                            }
-
                             &:hover {
                                 border-color: #221f20;
                                 background-color: #fff;
+                                color: #fff;
                                 transition: 0.3s;
                                 cursor: pointer;
 
@@ -129,6 +126,7 @@ a {
                                 }
                             }
                         }
+
                         .btn-like {
                             background-color: white;
                             border: 1px solid #221f20;
